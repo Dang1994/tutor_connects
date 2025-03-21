@@ -1,0 +1,69 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# The assistant project unique identifier
+assistant_id: tutor_finder_assistant
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+
+pipeline:
+  # Tokenizes the input by splitting on whitespace
+  - name: WhitespaceTokenizer
+  
+  # Extracts features based on regular expressions for certain patterns
+  - name: RegexFeaturizer
+  
+  # Adds lexical and syntactic features (like upper vs lowercase)
+  - name: LexicalSyntacticFeaturizer
+  
+  # Featurizes text by counting word occurrences
+  - name: CountVectorsFeaturizer
+    min_ngram: 1
+    max_ngram: 2
+  
+  # Uses character-level n-grams to extract additional features (useful for spelling variations)
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 3
+    max_ngram: 4
+  
+  # A transformer-based classifier for intent recognition and entity extraction
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+  
+  # Maps different synonyms of entities to the same canonical entity value
+  - name: EntitySynonymMapper
+  
+  # A classifier that selects the best response from a set of predefined responses
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+  
+  # Fallback classifier if none of the intents meet the confidence threshold
+  - name: FallbackClassifier
+    threshold: 0.3
+    ambiguity_threshold: 0.1
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  # Remembers frequently used conversation turns and skips unnecessary predictions
+  - name: MemoizationPolicy
+  
+  # Handles rule-based conversations (e.g., greetings, goodbyes)
+  - name: RulePolicy
+  
+  # Handles more complex conversations using TED (Transformers for Dialogue)
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true
+  
+  # UnexpecTEDIntentPolicy helps recover gracefully from unexpected intents
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 100

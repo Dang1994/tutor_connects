@@ -1,0 +1,50 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - Hello
+    - Hi
+    - Hey
+    - Good day
+    - Greetings
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+    - Catch you later
+    - I'm leaving now
+
+- intent: thank_you
+  examples: |
+    - Thank you
+    - Thanks a lot
+    - Appreciate it
+    - Thanks for your help
+
+# Sub-intents for specific chit-chat topics
+- intent: chit_chat_tutor_experience
+  examples: |
+    - What experience do the tutors have?
+    - How experienced are the tutors?
+
+- intent: chit_chat_subjects_help
+  examples: |
+    - Can you tell me more about the subjects tutors can help with?
+    - What subjects can tutors assist with?
+
+- intent: chit_chat_availability
+  examples: |
+    - How flexible are tutor schedules?
+    - Are tutors available on weekends?
+
+- intent: chit_chat_online_vs_offline
+  examples: |
+    - What’s better: online or offline tutoring?
+    - Can I choose between online and offline tutoring?
+
+- intent: chit_chat_education_tips
+  examples: |
+    - ପାଠ ପଢିବା ପାଇଁ କିଛି ଟିପ୍ସ ଅଛି କି?
+    - Any advice on how to succeed in education?

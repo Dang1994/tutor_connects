@@ -1,0 +1,42 @@
+version: "3.1"
+stories:
+- story: greet and respond
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: thank you
+  steps:
+    - intent: thank_you
+    - action: utter_thank_you
+
+# Chit-chat stories with specific intents
+- story: tutor experience chit-chat
+  steps:
+    - intent: chit_chat_tutor_experience
+    - action: utter_chit_chat_tutor_experience
+
+- story: subjects help chit-chat
+  steps:
+    - intent: chit_chat_subjects_help
+    - action: utter_chit_chat_subjects_help
+
+- story: tutor availability chit-chat
+  steps:
+    - intent: chit_chat_availability
+    - action: utter_chit_chat_availability
+
+- story: online vs offline chit-chat
+  steps:
+    - intent: chit_chat_online_vs_offline
+    - action: utter_chit_chat_online_vs_offline
+
+- story: education tips chit-chat
+  steps:
+    - intent: chit_chat_education_tips
+    - action: utter_chit_chat_education_tips

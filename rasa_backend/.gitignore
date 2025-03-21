@@ -1,0 +1,49 @@
+# Python cache files
+action/__pycache__/
+*.py[cod]
+*$py.class
+
+# Rasa-specific files
+*.qmlc
+settings.json
+
+# Virtual environment
+rasa_env/
+
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Rasa model files
+models/
+*.tar.gz
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environment variables
+.env
+.env.local
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# macOS files
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Test and coverage reports
+.coverage
+htmlcov/
+.pytest_cache/
+
+.rasa/

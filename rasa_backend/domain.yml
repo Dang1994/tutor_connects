@@ -1,0 +1,51 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank_you
+  - chit_chat_tutor_experience
+  - chit_chat_subjects_help
+  - chit_chat_availability
+  - chit_chat_online_vs_offline
+  - chit_chat_education_tips
+
+entities:
+  - location
+  - subject
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm Salu, your Tutor Finder Bot. How can I assist you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to come back anytime if you need help with finding a tutor."
+
+  utter_thank_you:
+    - text: "You're welcome! I'm always here to help."
+
+  utter_chit_chat_tutor_experience:
+    - text: "Tutors are highly experienced and specialize in their subjects. They typically have years of teaching experience."
+    - text: "Our tutors come from diverse educational backgrounds and have great experience in handling various subjects."
+
+  utter_chit_chat_subjects_help:
+    - text: "You can find tutors for various subjects like Math, Science, History, and even specialized subjects like Economics and Physics."
+    - text: "Whether you're looking for help in Mathematics or Art, we have tutors for almost every subject!"
+
+  utter_chit_chat_availability:
+    - text: "Most tutors offer flexible schedules and are available both during weekdays and weekends."
+    - text: "You can easily find tutors who are available according to your schedule, whether in-person or online."
+
+  utter_chit_chat_online_vs_offline:
+    - text: "Both online and offline tutoring have their pros and cons. It depends on your preference!"
+    - text: "Online tutoring offers flexibility and convenience, while in-person sessions provide direct interaction."
+
+  utter_chit_chat_education_tips:
+    - text: "Education is the key to unlocking your potential! Keep practicing and stay curious."
+    - text: "Consistent learning and asking questions are the foundations of a great education."
+
+actions: []
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
